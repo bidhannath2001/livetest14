@@ -65,7 +65,7 @@ class _MainScreenState extends State<MainScreen> {
                         const SizedBox(width: 10),
                         Expanded(
                           child: Text(
-                            recipe.title,
+                            "${recipe.title}",
                             style: const TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -76,7 +76,7 @@ class _MainScreenState extends State<MainScreen> {
                     ),
                     const SizedBox(height: 6),
                     Text(
-                      recipe.description,
+                      "${recipe.description}",
                       style: const TextStyle(
                         fontSize: 15,
                         color: Colors.black54,

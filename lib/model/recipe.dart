@@ -1,29 +1,29 @@
 import 'dart:convert';
 
 class Recipe {
-  final int id;
-  final String title;
-  final String description;
-  final int calories;
+  int? id;
+  String? title;
+  String? description;
+  int? calories;
 
-  Recipe({
-    required this.id,
-    required this.title,
-    required this.description,
-    required this.calories,
-  });
+  Recipe({this.id, this.title, this.description, this.calories});
 
-  factory Recipe.fromJson(Map<String, dynamic> json) {
-    return Recipe(
-      id: json['id'],
-      title: json['title'],
-      description: json['description'],
-      calories: json['calories'],
-    );
+  Recipe.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    title = json['title'];
+    description = json['description'];
+    calories = json['calories'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['id'] = this.id;
+    data['title'] = this.title;
+    data['description'] = this.description;
+    data['calories'] = this.calories;
+    return data;
   }
 }
-
-
 
 List<Recipe> parseRecipes(String jsonData) {
   final List<dynamic> decoded = jsonDecode(jsonData);
