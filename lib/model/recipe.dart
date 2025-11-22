@@ -25,7 +25,3 @@ class Recipe {
   }
 }
 
-List<Recipe> parseRecipes(String jsonData) {
-  final List<dynamic> decoded = jsonDecode(jsonData);
-  return decoded.map((item) => Recipe.fromJson(item)).toList();
-}
